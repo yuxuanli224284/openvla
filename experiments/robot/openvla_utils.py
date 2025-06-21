@@ -48,6 +48,7 @@ def get_vla(cfg):
         load_in_4bit=cfg.load_in_4bit,
         low_cpu_mem_usage=True,
         trust_remote_code=True,
+        cache_dir="/files1/Yuxuan_Li/openvla/openvlaModel",
     )
 
     # Move model to device.
@@ -74,7 +75,7 @@ def get_vla(cfg):
 
 def get_processor(cfg):
     """Get VLA model's Hugging Face processor."""
-    processor = AutoProcessor.from_pretrained(cfg.pretrained_checkpoint, trust_remote_code=True)
+    processor = AutoProcessor.from_pretrained(cfg.pretrained_checkpoint, trust_remote_code=True, cache_dir="/files1/Yuxuan_Li/openvla/openvlaModel")
     return processor
 
 
